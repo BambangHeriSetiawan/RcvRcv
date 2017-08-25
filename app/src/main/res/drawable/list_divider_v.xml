@@ -14,6 +14,9 @@
        See the License for the specific language governing permissions and
        limitations under the License.
 -->
-<color
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/bg_swipe_item_neutral"/>
+<shape
+    android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:width="1px"/>
+    <solid android:color="#20000000"/>
+</shape>
