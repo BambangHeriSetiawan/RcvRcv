@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/cv_ca"
+  android:elevation="@dimen/cardview_default_elevation"
+  android:background="@drawable/bg"
+  app:cardCornerRadius="@dimen/cardview_default_radius"
+  android:layout_margin="5dp"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <TextView
+        android:id="@+id/tvTest"
+        android:textStyle="bold"
+        android:textColor="@color/bgCardview"
+        android:padding="4dp"
+        android:background="@drawable/bg"
+        android:text="KPB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+      <TextView
+        android:padding="4dp"
+        android:text="PKB/NKLU/2017/02/051"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <TextView
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:text="NOPOL :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+      <TextView
+        android:padding="4dp"
+        android:text="AD 1234 BC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+      <TextView
+        android:textStyle="bold"
+        android:padding="4dp"
+        android:text="MEKANIK : "
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+      <TextView
+        android:padding="4dp"
+        android:text="SUPARMAN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    </LinearLayout>
+  </LinearLayout>
+</FrameLayout>
