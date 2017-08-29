@@ -36,7 +36,7 @@ public class AdapterRcvMA extends RecyclerView.Adapter<AdapterRcvMA.Holder> {
 
   @Override
   public void onBindViewHolder(Holder holder, int position) {
-
+    holder.tvText.setText("MA "+position);
   }
   private List<String> getMlist(){
     return mList;
