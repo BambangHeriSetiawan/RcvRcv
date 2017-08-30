@@ -1,4 +1,4 @@
-package com.codekopi.rcvrcv.adapter;
+package com.codekopi.rcvrcv.dragndrop.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

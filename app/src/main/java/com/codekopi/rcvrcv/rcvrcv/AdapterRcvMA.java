@@ -30,7 +30,7 @@ public class AdapterRcvMA extends RecyclerView.Adapter<AdapterRcvMA.Holder> {
 
   @Override
   public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View view = LayoutInflater.from(mContext).inflate(R.layout.rcv_ma,parent,false);
+    View view = LayoutInflater.from(mContext).inflate(R.layout.mechanic_pit,parent,false);
     return new Holder(view);
   }
 
@@ -51,7 +51,7 @@ public class AdapterRcvMA extends RecyclerView.Adapter<AdapterRcvMA.Holder> {
   }
 
   public class Holder extends RecyclerView.ViewHolder {
-    @BindView(R.id.tvNameMekanik)TextView tvText;
+    @BindView(R.id.tvNamePit)TextView tvText;
     public Holder(View itemView) {
       super(itemView);
       ButterKnife.bind(this,itemView);

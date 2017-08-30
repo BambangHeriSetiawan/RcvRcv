@@ -37,7 +37,7 @@ public class SamplePitActivity extends AppCompatActivity {
   }
 
   private void initRcvMA() {
-    rcvMA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    rcvMA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     List<String> listMa = new ArrayList<>();
     listMa.add("MA 1");
     listMa.add("MA 2");
@@ -48,7 +48,7 @@ public class SamplePitActivity extends AppCompatActivity {
   }
 
   private void initRcvCA() {
-    rcvCA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    rcvCA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     rcvCA.setHasFixedSize(true);
 
     AntrianService tes1 = new AntrianService("Test 1","type 1");
@@ -61,20 +61,10 @@ public class SamplePitActivity extends AppCompatActivity {
     CustomerAdvisor ca2 = new CustomerAdvisor("CA 2",listCaCa);
     CustomerAdvisor ca3 = new CustomerAdvisor("CA 3",listCaCa);
     List<CustomerAdvisor> customerAdvisor = Arrays.asList(ca1,ca2,ca3);
-    /*adapterRcvCA = new AdapterRcvCA(this,customerAdvisor);
-    adapterRcvCA.setExpandCollapseListener(new ExpandCollapseListener() {
-      @Override
-      public void onParentExpanded(int parentPosition) {
-        rcvCA.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false));
-      }
+    adapterRcvCA = new AdapterRcvCA(this,customerAdvisor);
 
-      @Override
-      public void onParentCollapsed(int parentPosition) {
-        rcvCA.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
-      }
-    });
-    rcvCA.setAdapter(adapterRcvCA);*/
-    for (int i = 0; i < customerAdvisor.size(); i++) {
+    rcvCA.setAdapter(adapterRcvCA);
+    /*for (int i = 0; i < customerAdvisor.size(); i++) {
       LinearLayout linearLayout = new LinearLayout(this);
       linearLayout.setOrientation(LinearLayout.VERTICAL);
       final RecyclerView rv = new RecyclerView(this);
@@ -90,6 +80,6 @@ public class SamplePitActivity extends AppCompatActivity {
       linearLayout.addView(rv);
       lyt_top.addView(linearLayout);
 
-    }
+    }*/
   }
 }

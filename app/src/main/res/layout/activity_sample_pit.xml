@@ -4,25 +4,24 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="vertical"
+  android:orientation="horizontal"
   android:weightSum="2"
   tools:context="com.codekopi.rcvrcv.rcvrcv.SamplePitActivity">
   <LinearLayout
     android:orientation="vertical"
-    android:background="@color/bgBtnStart"
     android:layout_margin="2dp"
     android:layout_weight="1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+      android:gravity="center"
       android:layout_margin="2dp"
-      android:textColor="@color/white"
-      android:text="Customer Advisor"
+      android:text="Antrian"
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
       <android.support.v7.widget.RecyclerView
         android:id="@+id/rcvCA"
-        android:padding="2dp"
+        android:background="@drawable/bg"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -34,22 +33,21 @@
   </LinearLayout>
   <LinearLayout
     android:orientation="vertical"
-    android:background="@color/bgBtnFinish"
     android:layout_margin="2dp"
     android:layout_weight="1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+      android:gravity="center"
       android:layout_margin="2dp"
-      android:textColor="@color/white"
       android:text="Mekanik"
-      android:layout_width="wrap_content"
+      android:layout_width="match_parent"
       android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
       android:id="@+id/rcvMA"
       android:padding="2dp"
-
-      android:layout_width="wrap_content"
+      android:background="@drawable/bg"
+      android:layout_width="match_parent"
       android:layout_height="match_parent"/>
   </LinearLayout>
 </LinearLayout>

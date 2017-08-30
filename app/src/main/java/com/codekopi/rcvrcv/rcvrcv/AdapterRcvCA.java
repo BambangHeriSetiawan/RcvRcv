@@ -29,14 +29,14 @@ public class AdapterRcvCA  extends ExpandableRecyclerAdapter<CustomerAdvisor,Ant
   @NonNull
   @Override
   public VieholderCA onCreateParentViewHolder(@NonNull ViewGroup parentViewGroup, int viewType) {
-    View view = mInflater.inflate(R.layout.rcv_ca, parentViewGroup,false);
+    View view = mInflater.inflate(R.layout.queue_pit, parentViewGroup,false);
     return new VieholderCA(view);
   }
 
   @NonNull
   @Override
   public VieholderAntrian onCreateChildViewHolder(@NonNull ViewGroup childViewGroup, int viewType) {
-    View view = mInflater.inflate(R.layout.rcv_ca_ca,childViewGroup,false);
+    View view = mInflater.inflate(R.layout.item_rcv_ca,childViewGroup,false);
     return new VieholderAntrian(view);
   }
 

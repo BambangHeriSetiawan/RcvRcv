@@ -21,14 +21,13 @@ public class VieholderAntrian extends ChildViewHolder {
    *
    * @param itemView The {@link View} being hosted in this ViewHolder
    */
-  @BindView(R.id.tvNameCA) TextView tvNameCA;
+
   @BindView(R.id.tvNameAntrina) TextView tvNameAntrina;
   public VieholderAntrian(@NonNull View itemView) {
     super(itemView);
     ButterKnife.bind(this,itemView);
   }
   public void bind(AntrianService service){
-    tvNameCA.setText(service.getType());
     tvNameAntrina.setText(service.getName());
 
   }

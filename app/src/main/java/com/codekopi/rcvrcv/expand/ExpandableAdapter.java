@@ -77,8 +77,8 @@ public class ExpandableAdapter extends AbstractExpandableItemAdapter<Holder, Chi
 
   @Override
   public void onBindGroupViewHolder(Holder holder, int groupPosition, int viewType) {
-// child item
-    final BaseData item = mProvider.getGroupItem(groupPosition);
+    // child item
+    final AbstractExpandableDataProvider.BaseData item = mProvider.getGroupItem(groupPosition);
 
     // set text
     holder.text1.setText(item.getText());
@@ -89,21 +89,24 @@ public class ExpandableAdapter extends AbstractExpandableItemAdapter<Holder, Chi
     // set background resource (target view ID: container)
     final int expandState = holder.getExpandStateFlags();
 
-    if ((expandState & ExpandableItemConstants.STATE_FLAG_IS_UPDATED) != 0) {
-      int bgResId;
-      boolean isExpanded;
-      boolean animateIndicator = ((expandState & Expandable.STATE_FLAG_HAS_EXPANDED_STATE_CHANGED)
-          != 0);
+    // set background resource (target view ID: container)
 
-      if ((expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0) {
-        bgResId = R.drawable.bg_group_item_expanded_state;
-        isExpanded = true;
-      } else {
-        bgResId = R.drawable.bg_group_item_normal_state;
-        isExpanded = false;
-      }
 
-      holder.container.setBackgroundResource(bgResId);
+
+      if ((expandState & ExpandableItemConstants.STATE_FLAG_IS_UPDATED) != 0) {
+        int bgResId;
+        boolean isExpanded;
+        boolean animateIndicator = ((expandState & Expandable.STATE_FLAG_HAS_EXPANDED_STATE_CHANGED)
+            != 0);
+
+        if ((expandState & Expandable.STATE_FLAG_IS_EXPANDED) != 0) {
+          //bgResId = R.drawable.bg_group_item_expanded_state;
+          isExpanded = true;
+        } else {
+          //bgResId = R.drawable.bg_group_item_normal_state;
+          isExpanded = false;
+        }
+      //holder.container.setBackgroundResource(bgResId);
 
       holder.mIndicator.setExpandedState(isExpanded, animateIndicator);
     }
@@ -113,7 +116,7 @@ public class ExpandableAdapter extends AbstractExpandableItemAdapter<Holder, Chi
   public void onBindChildViewHolder(ChildHolder holder, int groupPosition, int childPosition,
       int viewType) {
 // group item
-    final Item item = mProvider.getChildItem(groupPosition, childPosition);
+    final AbstractExpandableDataProvider.Item item = mProvider.getChildItem(groupPosition, childPosition);
 
     // set text
     holder.text1.setText(item.getText());
