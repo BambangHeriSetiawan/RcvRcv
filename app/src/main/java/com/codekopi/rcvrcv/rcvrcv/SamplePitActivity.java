@@ -1,28 +1,38 @@
 package com.codekopi.rcvrcv.rcvrcv;
 
+import static io.reactivex.android.schedulers.AndroidSchedulers.*;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.util.Log;
 import android.widget.LinearLayout;
-import android.widget.LinearLayout.LayoutParams;
-import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter.ExpandCollapseListener;
 import com.codekopi.rcvrcv.R;
+import com.codekopi.rcvrcv.api.ApiInterface;
+import com.codekopi.rcvrcv.api.ApiService;
+import com.codekopi.rcvrcv.api.model.ResponseDummy;
 import com.codekopi.rcvrcv.rcvrcv.model.AntrianService;
 import com.codekopi.rcvrcv.rcvrcv.model.CustomerAdvisor;
+
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import rx.Observable;
+import rx.Scheduler;
+import rx.schedulers.Schedulers;
+
 
 public class SamplePitActivity extends AppCompatActivity {
   private AdapterRcvCA adapterRcvCA;
   private AdapterRcvMA adapterRcvMA;
+  private ApiInterface mApi;
+
   @BindView(R.id.rcvCA)RecyclerView rcvCA;
   @BindView(R.id.rcvMA)RecyclerView rcvMA;
   @BindView(R.id.lyt_top)LinearLayout lyt_top;
@@ -34,6 +44,11 @@ public class SamplePitActivity extends AppCompatActivity {
     ButterKnife.bind(this);
     initRcvMA();
     initRcvCA();
+    initDummyData();
+  }
+
+  private void initDummyData() {
+    mApi = ApiService.getervice();
 
   }
 
