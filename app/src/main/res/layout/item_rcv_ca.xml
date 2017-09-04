@@ -8,15 +8,10 @@
   android:layout_width="match_parent"
   android:layout_height="wrap_content">
   <RelativeLayout
+    android:background="@drawable/bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <View
-      android:layout_alignParentStart="true"
-      android:id="@+id/drag_handle"
-      android:layout_width="32dp"
-      android:layout_height="wrap_content" />
     <LinearLayout
-      android:background="@drawable/bg"
       android:layout_alignParentEnd="true"
       android:orientation="vertical"
       android:layout_margin="5dp"
@@ -77,6 +72,13 @@
       </LinearLayout>
 
     </LinearLayout>
+    <ImageView
+      android:id="@+id/imgDrag"
+      android:src="@mipmap/ic_launcher"
+      android:layout_alignParentEnd="true"
+      android:layout_centerInParent="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content" />
   </RelativeLayout>
 
 

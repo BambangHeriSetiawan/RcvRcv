@@ -1,7 +1,17 @@
 package com.codekopi.rcvrcv.rcvrcv.viewholder;
 
+import android.content.ClipData;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.support.annotation.NonNull;
+import android.util.Log;
+import android.view.DragEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.View.DragShadowBuilder;
+import android.view.View.OnDragListener;
+import android.view.View.OnTouchListener;
+import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -14,7 +24,7 @@ import com.codekopi.rcvrcv.rcvrcv.model.CustomerAdvisor;
  * Created by GeekGarden on 28/08/2017.
  */
 
-public class VieholderAntrian extends ChildViewHolder {
+public class VieholderAntrian extends ChildViewHolder  {
 
   /**
    * Default constructor.
@@ -23,6 +33,7 @@ public class VieholderAntrian extends ChildViewHolder {
    */
 
   @BindView(R.id.tvNameAntrina) TextView tvNameAntrina;
+  @BindView(R.id.imgDrag) ImageView imgDrag;
   public VieholderAntrian(@NonNull View itemView) {
     super(itemView);
     ButterKnife.bind(this,itemView);
@@ -31,4 +42,6 @@ public class VieholderAntrian extends ChildViewHolder {
     tvNameAntrina.setText(service.getName());
 
   }
+
+
 }

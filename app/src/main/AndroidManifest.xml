@@ -27,8 +27,8 @@
     <activity android:name=".firebase.FirebaseActivity" />
     <activity android:name=".expand.ExspandableActivity" />
     <activity android:name=".dragndrop.DragnDropActivity" />
-    <activity android:name=".lab1.Lab1Activity"></activity>
-
+    <activity android:name=".lab1.Lab1Activity" />
+    <activity android:name=".webview.WebViewSampleActivity"/>
   </application>
 
 </manifest>

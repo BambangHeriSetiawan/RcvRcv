@@ -62,24 +62,7 @@ public class SamplePitActivity extends AppCompatActivity {
     CustomerAdvisor ca3 = new CustomerAdvisor("CA 3",listCaCa);
     List<CustomerAdvisor> customerAdvisor = Arrays.asList(ca1,ca2,ca3);
     adapterRcvCA = new AdapterRcvCA(this,customerAdvisor);
-
     rcvCA.setAdapter(adapterRcvCA);
-    /*for (int i = 0; i < customerAdvisor.size(); i++) {
-      LinearLayout linearLayout = new LinearLayout(this);
-      linearLayout.setOrientation(LinearLayout.VERTICAL);
-      final RecyclerView rv = new RecyclerView(this);
-      TextView tv = new TextView(this);
-      tv.setText(customerAdvisor.get(i).getName());
-      adapterRcvCA = new AdapterRcvCA(this,customerAdvisor);
 
-      rv.setId(R.id.idRcv+i);
-      rv.setBackground(getResources().getDrawable(R.drawable.bg));
-      rv.setLayoutManager(new LinearLayoutManager(this,LinearLayout.HORIZONTAL,false));
-      rv.setAdapter(adapterRcvCA);
-      linearLayout.addView(tv);
-      linearLayout.addView(rv);
-      lyt_top.addView(linearLayout);
-
-    }*/
   }
 }
