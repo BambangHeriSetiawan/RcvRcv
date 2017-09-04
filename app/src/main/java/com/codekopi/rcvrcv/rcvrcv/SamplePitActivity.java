@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
@@ -37,7 +38,7 @@ public class SamplePitActivity extends AppCompatActivity {
   }
 
   private void initRcvMA() {
-    rcvMA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+    rcvMA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     List<String> listMa = new ArrayList<>();
     listMa.add("MA 1");
     listMa.add("MA 2");
@@ -48,7 +49,11 @@ public class SamplePitActivity extends AppCompatActivity {
   }
 
   private void initRcvCA() {
-    rcvCA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+    GridLayoutManager glm = new GridLayoutManager(this,2);
+    StaggeredGridLayoutManager stg = new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.HORIZONTAL);
+    LinearLayoutManager llm = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
+    //rcvCA.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    rcvCA.setLayoutManager(llm);
     rcvCA.setHasFixedSize(true);
 
     AntrianService tes1 = new AntrianService("Test 1","type 1");

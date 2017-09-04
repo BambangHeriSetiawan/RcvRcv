@@ -1,6 +1,7 @@
 package com.codekopi.rcvrcv.rcvrcv;
 
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.Context;
 import android.os.Build.VERSION;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnClickListener;
 import android.view.View.OnDragListener;
+import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import com.bignerdranch.expandablerecyclerview.ExpandableRecyclerAdapter;
@@ -22,6 +24,7 @@ import com.codekopi.rcvrcv.rcvrcv.model.AntrianService;
 import com.codekopi.rcvrcv.rcvrcv.model.CustomerAdvisor;
 import com.codekopi.rcvrcv.rcvrcv.viewholder.VieholderAntrian;
 import com.codekopi.rcvrcv.rcvrcv.viewholder.VieholderCA;
+import com.thoughtbot.expandablerecyclerview.viewholders.ChildViewHolder;
 import java.util.List;
 
 /**
@@ -29,7 +32,7 @@ import java.util.List;
  */
 
 public class AdapterRcvCA  extends ExpandableRecyclerAdapter<CustomerAdvisor,AntrianService,VieholderCA,VieholderAntrian> implements
-    OnTouchListener, OnDragListener {
+    OnTouchListener, OnDragListener, OnLongClickListener {
   public static String TAG = AdapterRcvCA.class.getSimpleName();
   private LayoutInflater mInflater;
   public AdapterRcvCA(Context context,@NonNull List<CustomerAdvisor> parentList) {
@@ -63,8 +66,9 @@ public class AdapterRcvCA  extends ExpandableRecyclerAdapter<CustomerAdvisor,Ant
   public void onBindChildViewHolder(@NonNull final VieholderAntrian childViewHolder, int parentPosition,
       int childPosition, @NonNull final AntrianService child) {
     childViewHolder.bind(child);
-    childViewHolder.itemView.setOnTouchListener(this);
-    childViewHolder.itemView.setOnDragListener(this);
+    childViewHolder.itemView.setOnLongClickListener(this);
+   /* childViewHolder.itemView.setOnTouchListener(this);
+    childViewHolder.itemView.setOnDragListener(this);*/
   }
 
 
@@ -97,5 +101,14 @@ public class AdapterRcvCA  extends ExpandableRecyclerAdapter<CustomerAdvisor,Ant
       default:
           return false;
     }
+  }
+
+  @SuppressLint("ResourceAsColor")
+  @Override
+  public boolean onLongClick(View view) {
+    ChildViewHolder viewHolder = new ChildViewHolder(view);
+    viewHolder.itemView.setOnTouchListener(this);
+    viewHolder.itemView.setOnDragListener(this);
+    return true;
   }
 }

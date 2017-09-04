@@ -4,7 +4,7 @@
   xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:orientation="horizontal"
+  android:orientation="vertical"
   android:weightSum="2"
   tools:context="com.codekopi.rcvrcv.rcvrcv.SamplePitActivity">
   <LinearLayout
@@ -19,12 +19,18 @@
       android:text="Antrian"
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
       <android.support.v7.widget.RecyclerView
         android:id="@+id/rcvCA"
         android:background="@drawable/bg"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    </LinearLayout>
+
     <LinearLayout
       android:id="@+id/lyt_top"
       android:layout_width="match_parent"
