@@ -7,16 +7,27 @@ import com.google.gson.annotations.SerializedName;
 
 public class ResponseDummy {
 
-    @SerializedName("data")
+    @SerializedName("antrian")
     @Expose
-    private List<Datum> data = null;
+    private List<Antrian> antrian = null;
+    @SerializedName("pit")
+    @Expose
+    private List<Pit> pit = null;
 
-    public List<Datum> getData() {
-        return data;
+    public List<Antrian> getAntrian() {
+        return antrian;
     }
 
-    public void setData(List<Datum> data) {
-        this.data = data;
+    public void setAntrian(List<Antrian> antrian) {
+        this.antrian = antrian;
+    }
+
+    public List<Pit> getPit() {
+        return pit;
+    }
+
+    public void setPit(List<Pit> pit) {
+        this.pit = pit;
     }
 
 }

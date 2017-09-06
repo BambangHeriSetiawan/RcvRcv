@@ -10,6 +10,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import com.codekopi.rcvrcv.Listener;
 import com.codekopi.rcvrcv.R;
+import com.codekopi.rcvrcv.api.model.DataPitPkb;
+import com.codekopi.rcvrcv.api.model.Pit;
+import com.codekopi.rcvrcv.api.model.model.RepairOrder;
 import com.codekopi.rcvrcv.rcvrcv.model.CustomerAdvisor;
 import java.util.List;
 
@@ -19,14 +22,13 @@ import java.util.List;
 
 public class AdapterRcvMA extends RecyclerView.Adapter<AdapterRcvMA.Holder> {
   private Context mContext;
-  private List<String>mList;
+  private List<RepairOrder>mList;
   private Listener listener;
-  public AdapterRcvMA(Context mContext, List<String> mList,Listener listener) {
+  public AdapterRcvMA(Context mContext, List<RepairOrder> mList,Listener listener) {
     this.mContext = mContext;
     this.mList = mList;
     this.listener = listener;
   }
-
 
   @Override
   public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -36,12 +38,13 @@ public class AdapterRcvMA extends RecyclerView.Adapter<AdapterRcvMA.Holder> {
 
   @Override
   public void onBindViewHolder(Holder holder, int position) {
-    holder.tvText.setText("MA "+position);
+    RepairOrder pit = getMlist(position);
+    holder.tvText.setText(pit.getNumber());
   }
-  private List<String> getMlist(){
-    return mList;
+  private RepairOrder getMlist(int pos){
+    return mList.get(pos);
   }
-  private void UpdateListItem(List<String> list){
+  public void UpdateListItem(List<RepairOrder> list){
     this.mList = list;
     notifyDataSetChanged();
   }

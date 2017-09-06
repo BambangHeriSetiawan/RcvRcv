@@ -37,7 +37,10 @@
       android:layout_height="match_parent"
       android:orientation="horizontal" />
   </LinearLayout>
+
+
   <LinearLayout
+    android:visibility="visible"
     android:orientation="vertical"
     android:layout_margin="2dp"
     android:layout_weight="1"
@@ -49,8 +52,22 @@
       android:text="Mekanik"
       android:layout_width="match_parent"
       android:layout_height="wrap_content" />
+
+    <HorizontalScrollView
+      android:layout_weight="1"
+      android:id="@+id/hsView"
+      android:scrollbars="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      <LinearLayout
+        android:id="@+id/llm1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    </HorizontalScrollView>
     <android.support.v7.widget.RecyclerView
       android:id="@+id/rcvMA"
+      android:visibility="gone"
       android:padding="2dp"
       android:background="@drawable/bg"
       android:layout_width="match_parent"

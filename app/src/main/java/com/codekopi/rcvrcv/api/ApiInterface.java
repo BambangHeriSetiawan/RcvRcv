@@ -1,8 +1,11 @@
 package com.codekopi.rcvrcv.api;
 
 import com.codekopi.rcvrcv.api.model.ResponseDummy;
+import com.codekopi.rcvrcv.api.model.model.ResponseAntrian;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
-import rx.Observable;
+import retrofit2.http.Header;
+import retrofit2.http.Headers;
 
 
 /**
@@ -11,7 +14,9 @@ import rx.Observable;
 
 public interface ApiInterface {
 
-  @GET
-  Observable<ResponseDummy> getDummyData();
+
+  @Headers("Accept:application/json")
+  @GET("maintenances/queues")
+  Observable<ResponseAntrian> getAntrian(@Header("Authorization")String authorization);
 
 }

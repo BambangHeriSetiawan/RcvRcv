@@ -39,7 +39,7 @@ public class DragnDropActivity extends AppCompatActivity {
     listMa.add("MA ");
     int data = listMa.size();
     for (int i = 0; i < data; i++) {
-      adapterRcvMA = new AdapterRcvMA(this,listMa,null);
+      /*adapterRcvMA = new AdapterRcvMA(this,listMa,null);
       LayoutParams params = new LayoutParams(500,600);
       LinearLayout.LayoutParams linearParam = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.MATCH_PARENT);
       TextView tvUp = new TextView(this);
@@ -63,7 +63,7 @@ public class DragnDropActivity extends AppCompatActivity {
       //llmTop.addView(rcvTop);
       //llmDown.addView(rcvDown);
       lytTop.addView(llmTop);
-      lytDown.addView(llmDown);
+      lytDown.addView(llmDown);*/
 
     }
   }
