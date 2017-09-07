@@ -6,71 +6,89 @@
   android:layout_height="match_parent"
   android:orientation="vertical"
   android:weightSum="2"
-  tools:context="com.codekopi.rcvrcv.rcvrcv.SamplePitActivity">
-  <LinearLayout
-    android:orientation="vertical"
-    android:layout_margin="2dp"
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-      android:gravity="center"
-      android:layout_margin="2dp"
-      android:text="Antrian"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
+  tools:context="com.codekopi.rcvrcv.dragdrop.SamplePitActivity">
+
     <LinearLayout
+      android:layout_margin="5dp"
+      android:layout_weight="1"
+      android:weightSum="4"
       android:orientation="horizontal"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
-      <android.support.v7.widget.RecyclerView
-        android:id="@+id/rcvCA"
-        android:background="@drawable/bg"
-        android:visibility="visible"
+      <LinearLayout
+        android:background="@color/bgCardview"
+        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+          android:gravity="center"
+          android:layout_margin="2dp"
+          android:text="Antrian"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rcvAntrian"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+
+      </LinearLayout>
+      <LinearLayout
+        android:background="@color/colorAccent"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        v<TextView
+        android:gravity="center"
+        android:layout_margin="2dp"
+        android:text="Antrian"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rcvAntrianTop"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+      </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
-      android:id="@+id/lyt_top"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:orientation="horizontal" />
-  </LinearLayout>
-
-
-  <LinearLayout
-    android:visibility="visible"
-    android:orientation="vertical"
-    android:layout_margin="2dp"
-    android:layout_weight="1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-      android:gravity="center"
-      android:layout_margin="2dp"
-      android:text="Mekanik"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content" />
-
-    <HorizontalScrollView
       android:layout_weight="1"
-      android:id="@+id/hsView"
-      android:scrollbars="horizontal"
       android:layout_width="match_parent"
       android:layout_height="match_parent">
       <LinearLayout
-        android:id="@+id/llm1"
-        android:orientation="horizontal"
+        android:background="@color/bgCardview"
+        android:layout_weight="3"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    </HorizontalScrollView>
-    <android.support.v7.widget.RecyclerView
-      android:id="@+id/rcvMA"
-      android:visibility="gone"
-      android:padding="2dp"
-      android:background="@drawable/bg"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"/>
-  </LinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+          android:gravity="center"
+          android:layout_margin="2dp"
+          android:text="Mekanik"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rcvMekanik"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+      </LinearLayout>
+      <LinearLayout
+        android:background="@color/colorAccent"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        v<TextView
+        android:gravity="center"
+        android:layout_margin="2dp"
+        android:text="Antrian Mekanik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rcvAntrianBot"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"/>
+      </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

@@ -1,12 +1,9 @@
 package com.codekopi.rcvrcv;
 
 import android.content.ClipData;
-import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -14,7 +11,6 @@ import android.view.View;
 import android.view.View.DragShadowBuilder;
 import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -36,16 +32,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> implem
 
   @Override
   public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
-    View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_rcv_ca,parent,false);
+    View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_queue,parent,false);
     return new Holder(v);
   }
 
   @Override
   public void onBindViewHolder(Holder holder, int position) {
     holder.tvTest.setText(mlist.get(position));
-    holder.cvCa.setTag(position);
+    /*holder.cvCa.setTag(position);
     holder.cvCa.setOnTouchListener(this);
-    holder.cvCa.setOnDragListener(new DragListener(listener));
+    holder.cvCa.setOnDragListener(new DragListener(listener));*/
 
   }
 
@@ -79,7 +75,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.Holder> implem
   }
 
   public class Holder extends RecyclerView.ViewHolder {
-    @BindView(R.id.cv_ca)FrameLayout cvCa;
+
     @BindView(R.id.tvTest)TextView tvTest;
     public Holder(View itemView) {
       super(itemView);
